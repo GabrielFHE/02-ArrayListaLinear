@@ -1,4 +1,4 @@
-// Claudio Souza Nunes
+﻿// Claudio Souza Nunes
 
 #include <iostream>
 using namespace std;
@@ -105,5 +105,33 @@ void inserirElemento()
 // deve ser implementada como resposta ao exercicio
 void buscarElemento()
 {
+	int numeroDigitado;
+	int quantasVezes = 0;
+	int posicoes[MAX];
+	cout << "Digite um numero: ";
+	cin >> numeroDigitado;
+
+	for (int n = 0; n < MAX; n++) {
+		if (numeroDigitado == lista[n]){
+			posicoes[quantasVezes] = n;
+			quantasVezes++;
+		}
+	}
+	if (quantasVezes == 0){
+		cout << "Esse numero nao foi encontrado" << endl;
+	}
+	else if (quantasVezes == 1){
+		cout << "Foi encontrado o numero: " << numeroDigitado << endl;
+		cout << "Na posicao: " << posicoes[0];
+	}
+	else{
+		cout << "Foi encontrado o numero: " << numeroDigitado << endl;
+		cout << "Esse numero aparece: " << quantasVezes << " vezes" << endl;
+		cout << "Nas posicoes: ";
+		for (int n = 0; n < quantasVezes; n++) {
+			cout << posicoes[n] << ",";
+			
+		}
+	}
 
 }
